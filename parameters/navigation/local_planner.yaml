@@ -47,7 +47,7 @@ DWAPlannerROS:
     sim_time: 2.5
     sim_period: 0.1 # 10 hz
 
-    sim_granularity: 0.1
+    sim_granularity: 0.025
     angular_sim_granularity: 0.1
 
     vx_samples: 10
@@ -66,7 +66,7 @@ DWAPlannerROS:
     align_plan_scale: 0.0
     align_goal_scale: 0.0
     align_cmd_scale: 0.0
-    align_occ_scale: 0.1
+    align_occ_scale: 0.01
 
     default_align_scale: 1.0
     default_plan_scale: 0.0
@@ -74,7 +74,7 @@ DWAPlannerROS:
     default_cmd_scale: 1.0
     default_occ_scale: 0.0
 
-    arrive_align_scale: 1.0
+    arrive_align_scale: 10.0
     arrive_plan_scale: 0.0
     arrive_goal_scale: 1.0
     arrive_cmd_scale: 0.0
@@ -89,8 +89,8 @@ DWAPlannerROS:
     
     default_cmd_px:  0.0
     default_cmd_nx:  100.0
-    default_cmd_py:  100.0
-    default_cmd_ny:  100.0
+    default_cmd_py:  50.0
+    default_cmd_ny:  50.0
     default_cmd_pth: 0.0
     default_cmd_nth: 0.0
     
