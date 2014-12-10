@@ -13,7 +13,8 @@ publish_frequency: 0.0
 
 #robot radius overrides the footprint
 #robot_radius: 0.35
-footprint: [[-0.3655, -0.3295], [-0.3655, 0.3295], [0.3655, 0.3295], [0.3655, -0.3295]]
+#footprint: [[-0.3655, -0.3295], [-0.3655, 0.3295], [0.3655, 0.3295], [0.3655, -0.3295]]
+footprint: [[-0.40, -0.3295], [-0.40, 0.3295], [0.35, 0.3295], [0.35, -0.3295]]
 
 
 always_send_full_costmap: true
@@ -61,9 +62,9 @@ recent_obstacles:
 eliminate_small_occlusions:
     use_footprint: false
     target_cell_value: 254
-    dilation_cell_value: 253
-    dilation_radius: 0.2 # radius of moving obstacles
-    inflation_radius: 0.2 # radius of moving obstacles
+    dilation_cell_value: 253 #253
+    dilation_radius: 0.001 ## 0.2 # radius of moving obstacles
+    inflation_radius: 0.001 ##0.2 # radius of moving obstacles
 
 # Free Space modeling
 unknown_free_space:
@@ -78,15 +79,15 @@ unknown_free_space:
 free_space_inflation:
     use_footprint: false
     target_cell_value: 255
-    dilation_cell_value: 170
-    dilation_radius: 1.1
-    inflation_radius: 1.1
+    dilation_cell_value: 125 #170
+    dilation_radius: 0.75
+    inflation_radius: 0.75
 
 # Workspace to configuration space 
 configuration_space:
     use_footprint: false
     target_cell_value: 254
     dilation_cell_value: 253
-    dilation_radius: 0.35 # inscribed radius
-    inflation_radius: 1.0 # optimization
+    dilation_radius: 0.001 #0.05 # (only safety zone in case of robot footprint) ## 0.35 # inscribed radius
+    inflation_radius: 0.05 # Why inflate if we've got a rectangular base??? 0.52 # sqrt(0.4*0.4+0.33*0.33) ##1.0 # optimization
     cost_scaling_factor: 5.0

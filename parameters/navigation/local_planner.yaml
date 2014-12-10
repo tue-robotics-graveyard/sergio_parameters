@@ -44,7 +44,7 @@ DWAPlannerROS:
     ### DWA SPECIFIC PARAMETERS ###
 
     # Forward simulation parameters
-    sim_time: 2.5
+    sim_time: 2.0 ##2.5
     sim_period: 0.1 # 10 hz
 
     sim_granularity: 0.025
@@ -63,7 +63,7 @@ DWAPlannerROS:
 
     # Cost functions    
     align_align_scale: 1.0
-    align_plan_scale: 0.0
+    align_plan_scale: 0.005
     align_goal_scale: 0.0
     align_cmd_scale: 0.0
     align_occ_scale: 0.01
@@ -72,7 +72,7 @@ DWAPlannerROS:
     default_plan_scale: 0.0
     default_goal_scale: 1.0
     default_cmd_scale: 1.0
-    default_occ_scale: 0.01
+    default_occ_scale: 0.00000001
 
     arrive_align_scale: 10.0
     arrive_plan_scale: 0.0
