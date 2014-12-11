@@ -59,7 +59,7 @@ DWAPlannerROS:
     # Switching behavior
     switch_goal_distance: 0.3
     switch_plan_distance: 0.5
-    switch_yaw_error: 0.8
+    switch_yaw_error: 0.9
 
     # Cost functions    
     align_align_scale: 1.0
@@ -69,10 +69,10 @@ DWAPlannerROS:
     align_occ_scale: 0.01
 
     default_align_scale: 1.0
-    default_plan_scale: 0.0
+    default_plan_scale: 0.01
     default_goal_scale: 1.0
     default_cmd_scale: 1.0
-    default_occ_scale: 0.00000001
+    default_occ_scale: 0.01
 
     arrive_align_scale: 10.0
     arrive_plan_scale: 0.0
