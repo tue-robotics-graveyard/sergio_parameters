@@ -22,8 +22,9 @@ always_send_full_costmap: true
 
 plugins: 
     # Obstacles
-    - {name: ed_occupancy_grid,                 type: "costmap_2d::StaticLayer"}
-    - {name: recent_obstacles,                  type: "costmap_2d::ObstacleLayer"}
+    #- {name: ed_occupancy_grid,                 type: "costmap_2d::StaticLayer"}
+    #- {name: recent_obstacles,                  type: "costmap_2d::ObstacleLayer"}
+    - {name: ultrasone_sensors,                 type: "range_sensor_layer::RangeSensorLayer"}
 
     # Obstacle inflation
     - {name: eliminate_small_occlusions,        type: "costmap_2d::InflationLayer"}
@@ -42,6 +43,12 @@ plugins:
 
 
 # LAYER CONFIGURATION
+ultrasone_sensors:
+    topics: ["/sergio/base_sonar1"]
+    #no_readings_timeout:
+    #clear_threshold:
+    #mark_threshold:
+    clear_on_max_reading: true
 
 # Ed World model layer
 ed_occupancy_grid:
