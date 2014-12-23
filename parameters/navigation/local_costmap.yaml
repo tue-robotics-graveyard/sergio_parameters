@@ -23,7 +23,7 @@ always_send_full_costmap: true
 plugins: 
     # Obstacles
     #- {name: ed_occupancy_grid,                 type: "costmap_2d::StaticLayer"}
-    #- {name: recent_obstacles,                  type: "costmap_2d::ObstacleLayer"}
+    - {name: recent_obstacles,                  type: "costmap_2d::ObstacleLayer"}
     - {name: ultrasone_sensors,                 type: "range_sensor_layer::RangeSensorLayer"}
 
     # Obstacle inflation
@@ -44,18 +44,18 @@ plugins:
 
 # LAYER CONFIGURATION
 ultrasone_sensors:
-    topics: ["/sergio/base_sonar1"]
-    #no_readings_timeout:
-    #clear_threshold:
-    #mark_threshold:
+    topics: ["/sergio/base_sonar1","/sergio/base_sonar2","/sergio/base_sonar3","/sergio/base_sonar4","/sergio/base_sonar5"]
+    no_readings_timeout: 0.0
+    clear_threshold: 0.2
+    mark_threshold: 0.8
     clear_on_max_reading: true
 
 # Ed World model layer
-ed_occupancy_grid:
-    map_topic: /ed_map
-    track_unknown_space: true
-    use_maximum: true
-    lethal_cost_threshold: 99
+#ed_occupancy_grid:
+#    map_topic: /ed_map
+#    track_unknown_space: true
+#    use_maximum: true
+#    lethal_cost_threshold: 99
 
 recent_obstacles:
     occupied_to_default_time: 2.0
